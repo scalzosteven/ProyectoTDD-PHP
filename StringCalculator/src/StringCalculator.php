@@ -5,8 +5,8 @@ class StringCalculator
 {
     public function stringCalculator($arg){
         $result = 0;
-        if($arg == 1){
-            $result = 1;
+        if($arg){
+            $result = $arg;
         }
         return $result;
     }
