@@ -37,7 +37,7 @@ class Test extends \PHPUnit_Framework_TestCase
      */
     public function get_5_set_5()
     {
-        $result = $this->calculator->stringCalculator(4);
+        $result = $this->calculator->stringCalculator(5);
         $expected = 5;
         $this->assertEquals($expected, $result);
     }
