@@ -4,7 +4,11 @@ namespace Refactoring;
 class StringCalculator
 {
     public function stringCalculator($arg){
-        return 0;
+        $result = 0;
+        if($arg == 1){
+            $result = 1;
+        }
+        return $result;
     }
 
 }

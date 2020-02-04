@@ -27,7 +27,7 @@ class Test extends \PHPUnit_Framework_TestCase
      */
     public function get_1_set_1()
     {
-        $result = $this->calculator->stringCalculator('');
+        $result = $this->calculator->stringCalculator(1);
         $expected = 1;
         $this->assertEquals($expected, $result);
     }
