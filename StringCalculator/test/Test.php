@@ -17,9 +17,18 @@ class Test extends \PHPUnit_Framework_TestCase
      */
     public function get_0_when_array_empty()
     {
-        $result = $this->calculator->getStringAndSetZero('Hola');
-
+        $result = $this->calculator->stringCalculator('');
         $expected = 0;
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * @test
+     */
+    public function get_1_set_1()
+    {
+        $result = $this->calculator->stringCalculator('');
+        $expected = 1;
         $this->assertEquals($expected, $result);
     }
 

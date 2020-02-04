@@ -3,7 +3,7 @@
 namespace Refactoring;
 class StringCalculator
 {
-    public function getStringAndSetZero($arg){
+    public function stringCalculator($arg){
         return 0;
     }
 
