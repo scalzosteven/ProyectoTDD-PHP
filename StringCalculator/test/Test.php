@@ -32,4 +32,14 @@ class Test extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
+    /**
+     * @test
+     */
+    public function get_5_set_5()
+    {
+        $result = $this->calculator->stringCalculator(4);
+        $expected = 5;
+        $this->assertEquals($expected, $result);
+    }
+
 }
