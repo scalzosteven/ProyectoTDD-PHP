@@ -6,7 +6,10 @@ class StringCalculator
     public function stringCalculator($arg){
         $result = 0;
         if($arg){
-            $result = $arg;
+            $arrayString = explode(',', $arg);
+            foreach($arrayString as $value) {
+                $result += $value;
+            }
         }
         return $result;
     }

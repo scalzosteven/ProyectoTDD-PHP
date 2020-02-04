@@ -47,7 +47,7 @@ class Test extends \PHPUnit_Framework_TestCase
      */
     public function get_3_set_1_and_2()
     {
-        $result = $this->calculator->stringCalculator(1,2);
+        $result = $this->calculator->stringCalculator('1,2');
         $expected = 3;
         $this->assertEquals($expected, $result);
     }
