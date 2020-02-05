@@ -14,8 +14,11 @@ class StringCalculator
     {
         if ($arg) {
             $arrayChanged = str_replace('\n', ",", $arg);
+            $arrayChanged = str_replace('//', ",", $arrayChanged);
+            $arrayChanged = str_replace(';', ",", $arrayChanged);
             $arrayString = explode(',', $arrayChanged);
-            $result = $this->sumString($result, $arrayString);
+            $arrayCleaned = array_filter($arrayString);
+            $result = $this->sumString($result, $arrayCleaned);
         }
         return $result;
     }
