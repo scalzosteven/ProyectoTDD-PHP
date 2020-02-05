@@ -13,11 +13,7 @@ class StringCalculator
     private function ifNotEmptyString($arg, $result)
     {
         if ($arg) {
-            $arrayChanged = str_replace('\n', ",", $arg);
-            $arrayChanged = str_replace('//', ",", $arrayChanged);
-            $arrayChanged = str_replace(';', ",", $arrayChanged);
-            $arrayString = explode(',', $arrayChanged);
-            $arrayCleaned = array_filter($arrayString);
+            $arrayCleaned = $this->CleanArray($arg);
             $result = $this->sumString($result, $arrayCleaned);
         }
         return $result;
@@ -29,6 +25,15 @@ class StringCalculator
             $result += $value;
         }
         return $result;
+    }
+
+    private function CleanArray($arg)
+    {
+        $arrayChanged = str_replace('\n', ",", $arg);
+        $arrayChanged = str_replace('//', ",", $arrayChanged);
+        $arrayChanged = str_replace(';', ",", $arrayChanged);
+        $arrayString = explode(',', $arrayChanged);
+        return array_filter($arrayString);
     }
 
 }
