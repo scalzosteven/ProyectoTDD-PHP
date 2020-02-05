@@ -1,6 +1,8 @@
 <?php
 
 namespace Refactoring;
+use Exception;
+
 class StringCalculator
 {
     public function stringCalculator($arg){
@@ -33,7 +35,34 @@ class StringCalculator
         $arrayChanged = str_replace('//', ",", $arrayChanged);
         $arrayChanged = str_replace(';', ",", $arrayChanged);
         $arrayString = explode(',', $arrayChanged);
+
+        $arrayNegative =  array_filter($arrayString, function($k) {
+            return $k < 0;
+        });
+        if($arrayNegative){
+            try {
+                try {
+                    throw new Exception('negatives not allowed'. $this->showNegativeNumber($arrayNegative));
+                } catch (MiExcepción $e) {
+                    throw $e;
+                }
+            } catch (Exception $e) {
+                var_dump($e->getMessage());
+            }
+
+        }
+        $arrayString = array_filter($arrayString, function($k) {
+            return $k >= 0;
+        });
+
         return array_filter($arrayString);
     }
+
+    private function showNegativeNumber($numbers){
+        foreach ($numbers as $number){
+            echo ', ' . $number;
+        }
+    }
+
 
 }
