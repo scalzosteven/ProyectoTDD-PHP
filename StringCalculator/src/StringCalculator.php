@@ -14,9 +14,15 @@ class StringCalculator
     {
         if ($arg) {
             $arrayString = explode(',', $arg);
-            foreach ($arrayString as $value) {
-                $result += $value;
-            }
+            $result = $this->sum($result, $arrayString);
+        }
+        return $result;
+    }
+
+    private function sum($result, array $arrayString)
+    {
+        foreach ($arrayString as $value) {
+            $result += $value;
         }
         return $result;
     }
