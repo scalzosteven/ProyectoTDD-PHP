@@ -5,9 +5,16 @@ class StringCalculator
 {
     public function stringCalculator($arg){
         $result = 0;
-        if($arg){
+        $result = $this->ifNotEmptyString($arg, $result);
+        return $result;
+    }
+
+
+    private function ifNotEmptyString($arg, $result)
+    {
+        if ($arg) {
             $arrayString = explode(',', $arg);
-            foreach($arrayString as $value) {
+            foreach ($arrayString as $value) {
                 $result += $value;
             }
         }
