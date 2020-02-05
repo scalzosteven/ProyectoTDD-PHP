@@ -81,4 +81,14 @@ class Test extends \PHPUnit_Framework_TestCase
         $expected = 3;
         $this->assertEquals($expected, $result);
     }
+
+    /**
+     * @test
+     */
+    public function get_3_set_negative_1_and_2()
+    {
+        $result = $this->calculator->stringCalculator('-1,1,2');
+        $expected = 3;
+        $this->assertEquals($expected, $result);
+    }
 }
