@@ -13,7 +13,8 @@ class StringCalculator
     private function ifNotEmptyString($arg, $result)
     {
         if ($arg) {
-            $arrayString = explode(',', $arg);
+            $arrayChanged = str_replace('\n', ",", $arg);
+            $arrayString = explode(',', $arrayChanged);
             $result = $this->sumString($result, $arrayString);
         }
         return $result;
